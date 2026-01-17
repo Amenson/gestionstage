@@ -1,0 +1,515 @@
+/* ============================================
+   CSS COMPLET POUR DASHBOARD ÉTUDIANT
+   ============================================ */
+
+/* === Variables CSS === */
+:root {
+    --primary-blue: #0d6efd;
+    --secondary-orange: #fd7e14;
+    --success-green: #198754;
+    --danger-red: #dc3545;
+    --warning-yellow: #ffc107;
+    --info-cyan: #0dcaf0;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --border-color: #dee2e6;
+    --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    --transition: all 0.3s ease;
+}
+
+/* === Welcome Card === */
+.welcome-card {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #084298 100%);
+    color: var(--text-light);
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    margin-bottom: 20px;
+}
+
+.welcome-icon {
+    font-size: 3.5rem;
+    opacity: 0.9;
+}
+
+.welcome-card h1 {
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+.welcome-card .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* === Stat Cards === */
+.stat-card {
+    background: var(--card-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    height: 100%;
+    border-left: 4px solid;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+/* Empêcher le double effet hover si JS est actif */
+.js-enabled .stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-card.stat-primary {
+    border-left-color: var(--primary-blue);
+}
+
+.stat-card.stat-success {
+    border-left-color: var(--success-green);
+}
+
+.stat-card.stat-warning {
+    border-left-color: var(--warning-yellow);
+}
+
+.stat-card.stat-info {
+    border-left-color: var(--info-cyan);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    flex-shrink: 0;
+}
+
+.stat-primary .stat-icon {
+    background-color: rgba(13, 110, 253, 0.1);
+    color: var(--primary-blue);
+}
+
+.stat-success .stat-icon {
+    background-color: rgba(25, 135, 84, 0.1);
+    color: var(--success-green);
+}
+
+.stat-warning .stat-icon {
+    background-color: rgba(255, 193, 7, 0.1);
+    color: var(--warning-yellow);
+}
+
+.stat-info .stat-icon {
+    background-color: rgba(13, 202, 240, 0.1);
+    color: var(--info-cyan);
+}
+
+.stat-content {
+    flex: 1;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+    color: var(--text-dark);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin: 5px 0 0 0;
+    font-weight: 500;
+}
+
+/* === Cards === */
+.card {
+    border-radius: 12px;
+    border: none;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    background-color: var(--card-bg);
+    transition: var(--transition);
+    margin-bottom: 20px;
+    height: 100%;
+}
+
+.card:hover {
+    box-shadow: var(--shadow);
+}
+
+/* Empêcher le double effet hover si JS est actif */
+.js-enabled .card:hover {
+    transform: translateY(-2px);
+}
+
+.card-header {
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    border-bottom: none;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* === Stage Info === */
+.stage-info h4 {
+    color: var(--primary-blue);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+    width: 25px;
+    text-align: center;
+}
+
+.info-item strong {
+    min-width: 120px;
+    color: var(--text-dark);
+}
+
+.info-item span {
+    color: #6c757d;
+}
+
+/* === Notes Display === */
+.notes-summary {
+    text-align: center;
+}
+
+.moyenne-display {
+    margin-bottom: 20px;
+}
+
+.moyenne-circle {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--success-green) 0%, #146c43 100%);
+    color: var(--text-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: var(--shadow);
+}
+
+.moyenne-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.moyenne-max {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.notes-list {
+    text-align: left;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.note-item:hover {
+    background-color: #e9ecef;
+    transform: translateX(5px);
+}
+
+.note-critere {
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.note-value {
+    font-weight: 600;
+    color: var(--success-green);
+    font-size: 1.1rem;
+}
+
+/* === Table === */
+.table {
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    border-bottom: 2px solid var(--border-color);
+    color: var(--text-dark);
+}
+
+.table tbody tr {
+    transition: var(--transition);
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+    transform: scale(1.005);
+}
+
+/* === Action Cards === */
+.action-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 15px;
+    background: var(--card-bg);
+    border-radius: 12px;
+    text-decoration: none;
+    color: var(--text-dark);
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    border: 2px solid transparent;
+    height: 100%;
+    min-height: 120px;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+}
+
+.action-card i {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--primary-blue);
+}
+
+.action-card span {
+    font-weight: 500;
+    text-align: center;
+}
+
+.action-card.action-danger:hover {
+    border-color: var(--danger-red);
+    color: var(--danger-red);
+}
+
+.action-card.action-danger i {
+    color: var(--danger-red);
+}
+
+/* === Buttons === */
+.btn {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #084298 100%);
+    color: var(--text-light);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #084298 0%, #06357a 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    color: var(--text-light);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, var(--success-green) 0%, #146c43 100%);
+    color: var(--text-light);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #146c43 0%, #0f5132 100%);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow);
+    color: var(--text-light);
+}
+
+.btn-sm {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+}
+
+/* === Badges === */
+.badge {
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 6px;
+}
+
+/* === Empty State === */
+.text-center .display-1 {
+    font-size: 4rem;
+    opacity: 0.3;
+}
+
+/* === Animations === */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation désactivée par défaut, gérée par JS */
+.card,
+.stat-card {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Animation uniquement si JS est activé */
+.js-enabled .card {
+    animation: fadeIn 0.5s ease;
+}
+
+.js-enabled .stat-card {
+    animation: fadeIn 0.6s ease;
+}
+
+.js-enabled .stat-card:nth-child(1) { animation-delay: 0.1s; }
+.js-enabled .stat-card:nth-child(2) { animation-delay: 0.2s; }
+.js-enabled .stat-card:nth-child(3) { animation-delay: 0.3s; }
+.js-enabled .stat-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* === Responsive Design === */
+@media (max-width: 992px) {
+    .welcome-card {
+        padding: 20px;
+    }
+    
+    .welcome-icon {
+        font-size: 2.5rem;
+    }
+    
+    .stat-card {
+        margin-bottom: 15px;
+    }
+    
+    .moyenne-circle {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .moyenne-value {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-card {
+        text-align: center;
+    }
+    
+    .welcome-card .d-flex {
+        flex-direction: column;
+    }
+    
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .stat-icon {
+        margin: 0 auto;
+    }
+    
+    .info-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+    
+    .info-item strong {
+        min-width: auto;
+    }
+    
+    .table-responsive {
+        font-size: 0.875rem;
+    }
+    
+    .action-card {
+        min-height: 100px;
+        padding: 20px 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .stat-number {
+        font-size: 1.5rem;
+    }
+    
+    .card-body {
+        padding: 15px;
+    }
+    
+    .moyenne-circle {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .moyenne-value {
+        font-size: 1.5rem;
+    }
+}
+
+/* === Print Styles === */
+@media print {
+    .sidebar,
+    header,
+    .btn,
+    .action-card {
+        display: none;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+}
+

@@ -1,0 +1,523 @@
+/* ============================================
+   CSS COMPLET POUR PAGE D'ACCUEIL
+   ============================================ */
+
+/* === Variables CSS === */
+:root {
+    --primary-blue: #0d6efd;
+    --secondary-orange: #fd7e14;
+    --success-green: #198754;
+    --dark-bg: #212529;
+    --light-bg: #f8f9fa;
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    --transition: all 0.3s ease;
+}
+
+/* === Global === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px; /* Pour la navbar fixe */
+    scroll-behavior: smooth;
+}
+
+/* === Navigation === */
+.navbar {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #084298 100%) !important;
+    padding: 1rem 0;
+    transition: padding 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1000;
+}
+
+.navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: var(--transition);
+    margin: 0 0.5rem;
+}
+
+.nav-link:hover {
+    color: var(--secondary-orange) !important;
+    transform: translateY(-2px);
+}
+
+/* === Hero Section === */
+.hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: var(--text-light);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+}
+
+.hero-buttons .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: var(--transition);
+}
+
+.hero-buttons .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.hero-image {
+    position: relative;
+    height: 500px;
+    animation: fadeInRight 1s ease;
+}
+
+.floating-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    animation: float 3s ease-in-out infinite;
+    color: var(--text-dark);
+    width: 180px;
+    z-index: 1;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.floating-card i {
+    font-size: 3rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.floating-card p {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.card-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 50%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.card-3 {
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* === Statistiques === */
+.stats-section {
+    background: var(--text-light);
+}
+
+.stat-box {
+    text-align: center;
+    padding: 30px 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+}
+
+.stat-box:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Désactiver l'animation si JS n'est pas disponible */
+.no-js .stat-box,
+.no-js .stage-card,
+.no-js .login-card {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+.stat-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1;
+}
+
+.stat-label {
+    color: #6c757d;
+    font-weight: 500;
+    margin-top: 10px;
+    font-size: 1.1rem;
+}
+
+/* === Stages Section === */
+.stages-section {
+    background: var(--light-bg);
+}
+
+.stage-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.stage-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+}
+
+.stage-header {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #084298 100%);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.stage-header h5 {
+    margin: 0;
+    font-weight: 600;
+    flex: 1;
+    margin-right: 10px;
+}
+
+.stage-body {
+    padding: 20px;
+    flex: 1;
+}
+
+.stage-company,
+.stage-period {
+    margin-bottom: 10px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.stage-company i,
+.stage-period i {
+    color: var(--primary-blue);
+    margin-right: 8px;
+}
+
+.stage-footer {
+    padding: 15px 20px;
+    background: #f8f9fa;
+    border-top: 1px solid #dee2e6;
+}
+
+/* === Login Section === */
+.login-section {
+    background: white;
+}
+
+.login-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.login-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px 30px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: 2px solid transparent;
+    text-align: center;
+}
+
+.login-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-blue);
+}
+
+.student-card:hover {
+    border-color: var(--primary-blue);
+}
+
+.admin-card:hover {
+    border-color: var(--success-green);
+}
+
+.login-icon {
+    font-size: 4rem;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.admin-card .login-icon {
+    color: var(--success-green);
+}
+
+.login-card h4 {
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.login-card p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.login-card .btn {
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+}
+
+.login-features {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.login-features i {
+    color: var(--success-green);
+    margin-right: 5px;
+}
+
+/* === Footer === */
+.footer-section {
+    /* Match navbar gradient for visual consistency */
+    background: linear-gradient(135deg, var(--primary-blue) 0%, #084298 100%) !important;
+    color: #fff;
+    border-top: 4px solid rgba(255,255,255,0.03);
+}
+
+.footer-section h5 {
+    color: #fff; /* Ensure headings are readable on the gradient */
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-section a {
+    color: rgba(255,255,255,0.9);
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--secondary-orange) !important;
+    padding-left: 5px;
+}
+
+/* === Responsive === */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero-image {
+        height: 400px;
+        margin-top: 40px;
+    }
+    
+    .floating-card {
+        width: 150px;
+        padding: 20px;
+    }
+    
+    .floating-card i {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .hero-image {
+        height: 300px;
+    }
+    
+    .floating-card {
+        width: 120px;
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
+    
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2rem;
+    }
+    
+    .login-card {
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-content h1 {
+        font-size: 1.75rem;
+    }
+    
+    .floating-card {
+        display: none;
+    }
+    
+    .stat-box {
+        padding: 20px 15px;
+    }
+    
+    .hero-section {
+        min-height: auto;
+        padding: 60px 0;
+    }
+    
+    .hero-image {
+        display: none;
+    }
+}
+
+/* === Performance === */
+.stat-box,
+.stage-card,
+.login-card,
+.floating-card {
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* === Accessibilité === */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* === Smooth Scroll === */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Fallback pour navigateurs sans support de scroll-behavior */
+@supports not (scroll-behavior: smooth) {
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* === Animations au scroll === */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+

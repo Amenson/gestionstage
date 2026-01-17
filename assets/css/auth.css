@@ -1,0 +1,35 @@
+/* auth.css - styles pour la page inscription */
+.auth-container {
+  max-width: 720px;
+  margin: 2.5rem auto;
+  background: var(--surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+}
+
+.auth-header { text-align:center; margin-bottom:1rem }
+.auth-header h2 { margin:0; font-size:1.6rem }
+
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:.75rem }
+@media (max-width:720px){ .form-row{grid-template-columns:1fr} }
+
+.form-control { border-radius:8px; padding:.6rem .75rem; border:1px solid rgba(0,0,0,0.06) }
+.form-control:focus { box-shadow:0 0 0 4px rgba(13,110,253,0.06); border-color:var(--primary) }
+
+.password-toggle { cursor:pointer; margin-left:.5rem; color:var(--muted) }
+
+/* Password strength bar */
+.pw-strength {
+  height:8px; background:rgba(0,0,0,0.04); border-radius:999px; overflow:hidden; margin-top:.5rem;
+}
+.pw-strength > i { display:block; height:100%; width:0%; background:linear-gradient(90deg,var(--danger),var(--accent),var(--success)); transition:width .25s ease }
+
+/* Inline validation messages */
+.invalid-feedback { color:var(--danger); margin-top:.35rem; font-size:.92rem }
+
+/* Submit */
+.btn-primary[disabled]{ opacity:.6; transform:none; pointer-events:none }
+
+/* Small helper */
+.field-hint{font-size:.85rem;color:var(--muted);margin-top:.35rem}

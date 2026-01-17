@@ -1,0 +1,113 @@
+/* === Variables Couleurs === */
+:root {
+    --primary-blue: #0d6efd;
+    --secondary-orange: #fd7e14;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --input-border: #ced4da;
+    --input-focus: var(--primary-blue);
+    --btn-hover-orange: #e06a00;
+}
+
+/* === Global === */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-dark);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* === Card Form === */
+.card {
+    border-radius: 10px;
+    border: none;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: var(--card-bg);
+}
+
+.card-header {
+    background: var(--primary-blue);
+    color: var(--text-light);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* === Form Inputs === */
+.form-control, .form-select {
+    border-radius: 6px;
+    border: 1px solid var(--input-border);
+    transition: all 0.2s;
+}
+
+.form-control:focus, .form-select:focus {
+    border-color: var(--input-focus);
+    box-shadow: 0 0 5px rgba(13, 110, 253, 0.25);
+    outline: none;
+}
+
+/* === Labels === */
+.form-label {
+    font-weight: 500;
+}
+
+/* === Buttons === */
+.btn-primary {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: #084298;
+    border-color: #084298;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+}
+
+/* === Orange Hover Buttons (ex: delete, special) === */
+.btn-orange {
+    background-color: var(--secondary-orange);
+    border-color: var(--secondary-orange);
+    color: var(--text-light);
+}
+
+.btn-orange:hover {
+    background-color: var(--btn-hover-orange);
+    border-color: var(--btn-hover-orange);
+}
+
+/* === Alerts === */
+.alert {
+    border-radius: 6px;
+    padding: 12px 18px;
+    font-weight: 500;
+}
+
+/* === Responsive Form === */
+@media (max-width: 768px) {
+    .card-body {
+        padding: 15px;
+    }
+    .d-flex.justify-content-between {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
