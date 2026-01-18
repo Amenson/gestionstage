@@ -49,7 +49,7 @@ L’objectif est de **digitaliser et automatiser tout le processus de gestion de
 
 ### 1️⃣ Cloner le projet
 ```bash
-git clone https://github.com/TON-USERNAME/gestion-stages.git
+git clone https://github.com/Amenson/gestion-stages.git
 cd gestion-stages
 
 👨‍💻 Auteur
@@ -58,6 +58,7 @@ Nom : Amen TOULASSI
 
 Email: amentoulassi7@gmail.com
 
-Projet de mémoire / fin d’étude
+Projet  fin d’étude
 
 Année : 2026
+## certaines des idées ne sont pas encore implémenté mais nous continuerons d'améliorer le projet
