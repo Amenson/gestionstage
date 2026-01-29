@@ -52,6 +52,12 @@ L’objectif est de **digitaliser et automatiser tout le processus de gestion de
 git clone https://github.com/Amenson/gestion-stages.git
 cd gestion-stages
 
+Mots de passe Admin : admin
+login : 1234
+
+ Etudiant :AMEN@gmail.com
+mots de passe 1234
+
 👨‍💻 Auteur
 
 Nom : Amen TOULASSI
